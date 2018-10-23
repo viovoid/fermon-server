@@ -1,0 +1,11 @@
+{% extends 'brews/base.html' %}
+
+{% block content %}
+  {% for brew in brews %}
+    <div>
+      <h2><a href="{% url 'brew_detail' pk=brew.pk %}">{{ brew.ident }}</a></h2>
+      <p>{{ brew.init_date }}</p>
+      <p>{{ brew.ingredients }}</p>
+    </div>
+  {% endfor %} 
+{% endblock %}

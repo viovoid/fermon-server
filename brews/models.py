@@ -1,3 +1,11 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+class Brew(models.Model):
+  ident = models.TextField()
+  init_date = models.DateTimeField(
+    default = timezone.now)
+  ingredients = models.TextField()
+
+  def __str__(self):
+    return self.ident
