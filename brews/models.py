@@ -11,9 +11,9 @@ class Category(Enum):
 class Brew(models.Model):
   ident = models.CharField(max_length=32)
   category = models.CharField(
-    max_length=1,
-    choices=[(cat, cat.value) for cat in Category],
-    default=Category.VEGETABLE
+    max_length=16,
+    choices=[(cat.name, cat.name) for cat in Category],
+    default=Category.VEGETABLE.name
   )
   init_date = models.DateTimeField(default=timezone.now)
   ingredients = models.TextField()

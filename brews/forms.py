@@ -6,4 +6,4 @@ class BrewForm(forms.ModelForm):
 
   class Meta:
     model = Brew
-    fields = ('ident', 'init_date', 'ingredients')
+    fields = ('ident', 'category', 'init_date', 'ingredients')

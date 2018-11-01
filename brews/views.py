@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BrewForm
-from .models import Brew
+from .models import Brew, Update
 
 @login_required
 def brew_list(request):
@@ -11,7 +11,11 @@ def brew_list(request):
 @login_required
 def brew_detail(request, pk):
   brew = get_object_or_404(Brew, pk=pk)
-  return render(request, 'brews/brew_detail.html', {'brew': brew})
+  updates = Update.objects.filter(brew=brew)
+  return render(request, 'brews/brew_detail.html', {
+    'brew': brew,
+    'updates': updates,
+  })
 
 @login_required
 def brew_new(request):
