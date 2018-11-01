@@ -1,7 +1,11 @@
 {% extends 'brews/base.html' %}
 
 {% block content %}
-  <h1>New brew</h1>
+  {% if form.instance.pk is None %}
+    <h1>New brew</h1>
+  {% else %}
+    <h1>Edit brew</h1>
+  {% endif %}
   <form method="POST" class="post-form">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Save</button>

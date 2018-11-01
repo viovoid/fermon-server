@@ -4,6 +4,7 @@
   <div class="brew">
     <a class="btn btn-default" href="{% url 'brew_edit' pk=brew.pk %}">Edit</a>
     <h1>{{ brew.ident }}</h1>
+    <p>{{ brew.category }}</p>
     <p>{{ brew.init_date }}</p>
     <p>{{ brew.ingredients }}</p>
     <div class="updates">
