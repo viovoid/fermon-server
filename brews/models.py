@@ -23,7 +23,7 @@ class Brew(models.Model):
 
 class Update(models.Model):
   brew = models.ForeignKey(Brew, on_delete=models.CASCADE)
-  init_date = models.DateTimeField(default=timezone.now)
+  post_date = models.DateTimeField(default=timezone.now)
   body = models.TextField()
 
   def __str__(self):
