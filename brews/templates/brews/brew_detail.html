@@ -10,7 +10,7 @@
     <div class="updates">
       {% for update in updates %}
         <p>{{ update.post_date|date:"Y-m-d H:i:s" }}</p>
-        <p>{{ update.body }}</p>
+        <pre>{{ update.body }}</pre>
       {% endfor %}
       <br />
       <h2>Add Update</h2>
