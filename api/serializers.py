@@ -7,13 +7,13 @@ class UserSerializer(serializers.ModelSerializer):
     model = User
     fields = ['url', 'username', 'email', 'is_staff']
 
-class BrewSerializer(serializers.ModelSerializer):
-  updates = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-  class Meta:
-    model = Brew
-    fields = ['id', 'ident', 'category', 'init_date', 'ingredients', 'updates']
-
 class UpdateSerializer(serializers.ModelSerializer):
   class Meta:
     model = Update
     fields = ['id', 'brew', 'post_date', 'body']
+
+class BrewSerializer(serializers.ModelSerializer):
+  updates = UpdateSerializer(many=True, read_only=True)
+  class Meta:
+    model = Brew
+    fields = ['id', 'ident', 'category', 'init_date', 'ingredients', 'updates']

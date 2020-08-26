@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'bringer',
     'localhost',
+    '127.0.0.1',
 ]
 
 LOGIN_URL = '/admin/'
@@ -145,4 +146,6 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://bringer:3000',
     'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://fermon.mirrod.in',
 )
